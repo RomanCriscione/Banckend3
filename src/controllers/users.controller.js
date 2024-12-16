@@ -25,7 +25,7 @@ const deleteUser = async (req, res) => {
     const userId = req.params.uid;
     const user = await usersService.getUserById(userId);
     if (!user) return res.status(404).send({ status: "error", error: "User not found" });
-    await usersService.delete(userId);  // Aquí se agrego la eliminación
+    await usersService.delete(userId); 
     res.send({ status: "success", message: "User deleted" })
 }
 
